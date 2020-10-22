@@ -35,6 +35,7 @@ $user = $query->fetchAll();
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Date de naissance</th>
+                    <th>Adresse</th>
                     <th>Adresse mail</th>
                     <th>Action</th>
                 </tr>
@@ -44,6 +45,7 @@ $user = $query->fetchAll();
                 <td><?php echo  $item["nom"] ?></td>
                 <td><?php echo  $item["prenom"] ?></td>
                 <td><?php echo  $item["dateDeNaissance"] ?></td>
+                <td><?php echo  $item["adresse"] ?></td>
                 <td><?php echo  $item["mail"] ?></td>
                 <td><a href="modifier.php?id=<?=$item["id"]?>" class="btn btn-primary">Modifier</a></td>
             </tr>

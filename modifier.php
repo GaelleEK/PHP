@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-bootstrap.css">
-    <title>Document</title>
+    <title>Modification d'utilisateur</title>
 </head>
 <body>
 
@@ -23,7 +23,8 @@ $fetch = $query ->fetch();
 
 
 ?>
-<container class="container">
+<container class="container-fluid">
+<h1 class="text-center text-uppercase p-5">Modification d'utilisateur</h1>
         <form action="modifier.php" method="post">
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
@@ -31,6 +32,7 @@ $fetch = $query ->fetch();
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Date de naissance</th>
+                    <th>Adresse</th>
                     <th>Adresse mail</th>
                     <th>Action</th>
                 </tr>
@@ -40,6 +42,7 @@ $fetch = $query ->fetch();
                     <td><input type="text" name="nom" value="<?php echo  $fetch["nom"] ?>"></input></td>
                     <td><input type="text" name="prenom" value="<?php echo  $fetch["prenom"] ?>"></input></td>
                     <td><input type="text" name="dateDeNaissance" value="<?php echo  $fetch["dateDeNaissance"] ?>"></input></td>
+                    <td><input type="text" name="adresse" value="<?php echo  $fetch["adresse"] ?>"></input></td>
                     <td><input type="text" name="mail" value="<?php echo  $fetch["mail"] ?>"></input></td>
                     <td><input type="submit" value="modifier"></input></td>
                 </tr>
@@ -50,12 +53,15 @@ $fetch = $query ->fetch();
 </html>
 <?php
 /*action du action="modifier.php"*/
+if (isset($_REQUEST)) {
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $birthday = $_POST["dateDeNaissance"];
+$adresse = $_POST["adresse"];
 $mail = $_POST["mail"];
 
-
-
-
+$query = $pdo->prepare("UPDATE user SET ($nom,$prenom,$birthday,$adresse,$mail)");
+$query -> execute();
+}
+else echo "aucune entrées pour modification";
 ?>
