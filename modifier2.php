@@ -15,11 +15,7 @@ if (isset($_POST["click"])) {
     
 $query = $pdo->prepare("UPDATE user SET nom = '$nom', prenom = '$prenom', dateDeNaissance = '$birthday', adresse = '$adresse', mail = '$mail' WHERE id = '$id'");
 $query -> execute();
+include ("affichage-bdd.php");
 }
 
-
-else if ( isset($_POST["click"])) {
-    echo "aucune entrées pour modification";
-}
-echo 'modif enregistré';
 ?>
