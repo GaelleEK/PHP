@@ -25,7 +25,7 @@ $fetch = $query ->fetch();
 ?>
 <container class="container-fluid">
 <h1 class="text-center text-uppercase p-5">Modification d'utilisateur</h1>
-        <form action="modifier.php" method="post">
+        <form action="modifier2.php" method="post">
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -51,19 +51,4 @@ $fetch = $query ->fetch();
 </container>
 </body>
 </html>
-<?php
-/*action du action="modifier.php"*/
 
-if (isset($_POST["click"])) {
-
-$nom = $_POST["nom"];
-$prenom = $_POST["prenom"];
-$birthday = $_POST["dateDeNaissance"];
-$adresse = $_POST["adresse"];
-$mail = $_POST["mail"];
-
-$query = $pdo->prepare("UPDATE user SET ( nom = $nom, prenom = $prenom, dateDeNaissance = $birthday, adresse = $adresse, mail = $mail) WHERE id = $id");
-$query -> execute();
-}
-else echo "aucune entrées pour modification";
-?>
