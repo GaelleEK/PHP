@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style-bootstrap.css">
+</head>
+
+
+<div class="border border-dark text-center bg-light container">
+  <h1 class="p-5 text-center">Formulaire d'inscription</h1>
+
+  <FORM action="traitement.php" method="POST">
+
+    <div class="p-3 form-group row">
+      <label class="col-sm-2 col-form-label">Nom</label>
+      <input class="col-sm-9 form-control" type="text" name="nom">
+    </div>
+    <div class="p-3 form-group row">
+      <label class="col-sm-2 col-form-label">Prénom</label>
+      <input class="col-sm-9 form-control" type="text" name="prenom">
+    </div>
+    <div class="p-3 form-group row">
+      <label class="col-sm-2 col-form-label">Date de naissance</label>
+      <input class="text-center col-sm-9 form-control" type="date" name="dateDeNaissance">
+    </div>
+    <div class="p-3 form-group row">
+      <label class="col-sm-2 col-form-label">Adresse</label>
+      <input class="col-sm-9 form-control" type="text" name="adresse">
+    </div>
+    <div class="p-3 form-group row">
+      <label class="col-sm-2 col-form-label">Email</label>
+      <input class="col-sm-9 form-control" type="mail" name="mail">
+    </div>
+    <div class="p-5 form-group text-center">
+      <button class="m-3 btn btn-outline-dark" type="submit">Enregistrer</button>
+      <button class="m-3 btn btn-outline-dark" type="reset">Réinitialiser</button>
+    </div>
+  </FORM>
+</div>
+</div>
+
+
+</html>

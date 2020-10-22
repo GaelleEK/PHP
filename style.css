@@ -1,0 +1,60 @@
+/* mise en page de page-inscription */
+
+input, button {
+    width : 150px;
+    margin: 0;
+  
+    -webkit-box-sizing: border-box; /* Pour les anciennes versions des navigateurs WebKit */
+       -moz-box-sizing: border-box; /* Pour tous les navigateurs Gecko */
+            box-sizing: border-box;
+
+}
+.cadre {
+    background-color: #b0b0b0;
+    text-align: center;
+    padding-bottom: 30px;
+    border: inherit;
+    width: 40%;
+    margin: auto;  
+}
+
+label {
+    display: block;
+    margin: 10px;
+}
+
+
+button {
+
+    background-color: #000000;
+    color: white;
+    margin: 40px;
+
+}
+.cadre .titre {
+    padding-bottom: 20px;
+}
+
+
+/* mise en page d'affichage bdd */
+
+table {
+    border: solid #000000;
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.cellule {
+    border: thin solid #000000;
+    width: 50%;
+    text-align: center;
+}
+
+th.cellule {
+    border-bottom: solid #000000;
+}
+
+.titre {
+    text-align: center;
+}
