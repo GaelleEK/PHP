@@ -38,13 +38,13 @@ $fetch = $query ->fetch();
                 </tr>
             </thead>
                 <tr>
-                    <input type="hidden" name=$id value="">
+                    <input type="hidden" name=id value="<?=$id?>">
                     <td><input type="text" name="nom" value="<?php echo  $fetch["nom"] ?>"></input></td>
                     <td><input type="text" name="prenom" value="<?php echo  $fetch["prenom"] ?>"></input></td>
                     <td><input type="text" name="dateDeNaissance" value="<?php echo  $fetch["dateDeNaissance"] ?>"></input></td>
                     <td><input type="text" name="adresse" value="<?php echo  $fetch["adresse"] ?>"></input></td>
                     <td><input type="text" name="mail" value="<?php echo  $fetch["mail"] ?>"></input></td>
-                    <td><input type="submit" value="modifier"></input></td>
+                    <td><input type="submit" name="click" value="modifier"></input></td>
                 </tr>
           </table>  
         </form>
@@ -53,14 +53,16 @@ $fetch = $query ->fetch();
 </html>
 <?php
 /*action du action="modifier.php"*/
-if (isset($_REQUEST)) {
+
+if (isset($_POST["click"])) {
+
 $nom = $_POST["nom"];
 $prenom = $_POST["prenom"];
 $birthday = $_POST["dateDeNaissance"];
 $adresse = $_POST["adresse"];
 $mail = $_POST["mail"];
 
-$query = $pdo->prepare("UPDATE user SET ($nom,$prenom,$birthday,$adresse,$mail)");
+$query = $pdo->prepare("UPDATE user SET ( nom = $nom, prenom = $prenom, dateDeNaissance = $birthday, adresse = $adresse, mail = $mail) WHERE id = $id");
 $query -> execute();
 }
 else echo "aucune entrées pour modification";
